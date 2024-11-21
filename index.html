@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+	--font: "Cartograph CF";
+	--bgcolor: #1f1d2e;
+	--linkcolor: #e0def4;
+}
+
+/*-----------------------------------------------------------*/
+input {
+    height: inherit;
+    width: 680px;
+    background: #26233a;
+    color: #ebbcba;
+    font: "Cartograph CF";
+    font-weight: mono;
+    line-height: 1.8em;
+    box-shadow: 1px 1px 3px #000000;
+    border: none;
+    text-align: center;
+    border-radius: 8px;
+    outline: none;
+    padding: 7px 14px;
+    font-size: 18;
+    grid-column: 1 / -1;
+    margin: 0px 0px 30px 0px;;
+}
+body {
+/*
+>------------------ incase you want to use a background image -----------------<
+
+	background-image: url('../background/bg.jpg');
+	background-repeat : no-repeat;
+*/
+	background-color: #191724;
+	background-size: cover;
+}
+
+.everything {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.link {
+	display: inline-block;
+	margin: 1%;
+	height: 185px;
+	width: 140px;
+	text-align: left;
+	padding-left: 3%;
+	background-color: var(--bgcolor);
+	border-radius: 8px;
+	box-shadow: 2px 2px 8px #000000;
+}
+
+.box {
+	width: 750px;
+}
+
+ul {
+	padding-inline-start: 0;
+	list-style: none;
+}
+
+a {
+	display: block;
+	line-height: 2.4em;
+	font-family: var(--font);
+	color: var(--linkcolor);
+	font-size: 1rem;
+	text-decoration: none;
+	outline: none;
+	transition: .2s;
+}
+
+a:hover {
+	color: #9ccfd8;
+}
+
+.time {
+    /* font-family: "Cartograph CF"; monospace; */
+    font-weight: mono;
+    font-size: 5.5rem;
+    margin: 50px 0px 50px 0px;
+    color: var(--linkcolor);
+	text-shadow: -5px 5px 0px #eb6f92, -10px 10px #f6c177, -15px 15px 0px #C3A5E6, -20px 20px 0px #31748f;
+}
+    </style>
+</head>
+<body>
+    <body>
+        <div class="everything">
+          <div id="time" class="time"></div>
+          <form action="https://google.com/search" method="GET">
+            <input
+              autofocus
+              name="q"
+              class="search"
+              type="search"
+              id="search-bar-input"
+              placeholder=">_"
+              autofocus
+            />
+          </form>
+          <div class="box">
+                  <div class="link">
+                      <ul>
+                          <li><a href="https://chatgpt.com/">Chatgpt</a></li>
+                          <li><a href="https://gemini.google.com/">gemini</a></li>
+                          <li><a href="https://zzzcode.ai/">Zzz</a></li>
+                          <li><a href="https://copilot.microsoft.com/">copilot</a></li>
+                      </ul>
+                  </div>
+                  <div class="link">
+                      <ul>
+                          <li><a href="https://youtube.com">youtube</a></li>
+                          <li><a href="https://hianime.to/home">HiAnime</a></li>
+                          <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+                          <li><a href="https://www.last.fm">LastFm</a></li>
+                      </ul>
+                  </div>
+                  <div class="link">
+                      <ul>
+                          <li><a href="https://github.com/">github</a></li>
+                          <li><a href="https://moodle.polytechnic.bh/moodle/my/">Moodle</a></li>
+                          <li><a href="https://www.gmail.com/">gmail</a></li>
+                          <li><a href="https://outlook.office.com/mail">Outlook</a></li>
+                      </ul>
+                  </div>
+                  <div class="link">
+                      <ul>
+                          <li><a href="https://www.netflix.com/browse">netflix</a></li>
+                          <li><a href="https://www.twitch.tv/">twitch</a></li>
+                          <li><a href="https://www.instagram.com/">instagram</a></li>
+                          <li><a href="https://web.whatsapp.com/">whatsapp</a></li>
+                      </ul>
+                  </div>
+              </div>
+        </div>
+        <script>
+          function updateClock() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let ampm = hours >= 12 ? "pm" : "am";
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            let time = hours + ":" + minutes + " " + ampm;
+            document.getElementById("time").innerHTML = time;
+            setTimeout(updateClock, 1000);
+          }
+    
+          updateClock();
+        </script>
+      </body>
+</body>
+</html>
